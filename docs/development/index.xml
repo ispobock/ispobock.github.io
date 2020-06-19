@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Development on Here is Bock&#39;s Site</title>
+    <link>http://ispobock.github.io/docs/development/</link>
+    <description>Recent content in Development on Here is Bock&#39;s Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://ispobock.github.io/docs/development/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>http://ispobock.github.io/docs/development/restful/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://ispobock.github.io/docs/development/restful/</guid>
+      <description>RESTful架构 本篇是我学习RESTful的笔记。
+ RESTful，即Representational State Transfer，表现层状态转换。以资源为导向，每个URI(统一资源标识符)标识一个资源，对应有get/post/put/delete方法。
+（URL(统一资源定位符)是URI最普遍的的一种形式，URI包括URL和URN(统一资源名)）
+传统的Web后端仅仅是以方法为导向，后端写了N个方法，每个路由映射到一个方法，用于处理请求。
+Resources REST其实是资源的表现层状态转化，资源是网络中的一个实体，可以是文本、图片、音频等，用URI来进行唯一定位。
+Representation 资源的表现层，即呈现出来的形式，文本可以是用txt、xml、json、html等多种形式呈现出来。
+State Transfer 状态转换是指资源表现层的状态转换，用户是通过HTTP协议来与服务器进行交互，以操控网络中的资源，使其表现层发生状态转化（比如查插删改）。正好可以用HTTP的四个动作GET/POST/PUT/DELETE来完成。
+小结  每个URI代表一种资源。 用户通过GET/POST/PUT/DELETE实现资源的表现层状态转化。  注意事项  URI表示资源，不该包含动词。动作由HTTP协议的GET/POST/PUT/DELETE来加以区分。 URI中不包含版本号，版本号通过HTTP请求头中的Accept字段区分。  </description>
+    </item>
+    
+  </channel>
+</rss>
