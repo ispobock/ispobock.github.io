@@ -1,46 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tools on Here is Bock&#39;s Site</title>
-    <link>http://ispobock.github.io/docs/tools/</link>
-    <description>Recent content in Tools on Here is Bock&#39;s Site</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="http://ispobock.github.io/docs/tools/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title></title>
-      <link>http://ispobock.github.io/docs/tools/beamer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://ispobock.github.io/docs/tools/beamer/</guid>
-      <description>Beamer Beamer是一个简单高效的LaTeX Slides模板，用其制作学术PPT会更加简洁美观。这里是一个Beamer模板，包括文档结构搭建、分栏、模块化文本、参考文献引用、算法编写、字体设置以及图片插入等功能的实现。
- 环境配置：CTeX + vscode + LaTeX Workshop插件 参考文档：beameruserguide 初始文档结构：  整体框架 \documentclass{beamer}\usetheme{EastLansing} % Beamer主题样式v 3.0\usecolortheme{rose} % Beamer颜色主题样式\usefonttheme[onlylarge]{structuresmallcapsserif}\title[]{} % 缩写，全写\author[]{}\institute[]{}\begin{document}\begin{frame}\titlepage\end{frame}\section*{Outline}\begin{frame}\tableofcontents\end{frame}\section{Introduction}\subsection{Overview}\begin{frame}\frametitle{}%\framesubtitle{} Content\end{frame}\end{document}加外框的文本 % definition\begin{definition}definition...\end{definition}% example\begin{example}\begin{itemize}\item emample1\item emample2\end{itemize}\end{example}% block\begin{block}{Answered Questions}How many primes are there?\end{block}% proof\begin{proof}\end{proof}分栏 \begin{columns}\column{.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://ispobock.github.io/docs/tools/git/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://ispobock.github.io/docs/tools/git/</guid>
-      <description>Git学习手册 总结了一些Git的常规操作，以遍以后查看使用。
-本地仓库 首先得有个本地仓库，可由两种方法创建。
-$ git initgit init在当前目录创建一个仓库，并自动创建一个master分支。
-$ git clone [url]或者，将源程仓库从[url]clone下来，并将其全部分支和commit历史全部都一并clone下来。
-分支 得有一个分支，分支是版本控制的核心。master是默认创建的分支，也是主分支，其中存放的一般是deployment级别的代码。做修改一般会创建自己的分支。
-$ git branch [branch-name]查看当前分支。
-$ git status切换当前分支。
-$ git checkout [branch-name]管理本地与远程分支 将某（远程 or 本地）分支合并到当前本地分支。
-$ git merge [branch-name]查看本地和远程各有哪些分支。
-$ git branch -a删除远程分支。
-$ git push origin --delete [remote-branch-name]删除本地分支。
-$ git branch -d [branch-name]从远程仓库获取更改 首先用git remote查看下本地配置了哪些源程服务器。
-$ git remote -v然后用git fetch将源程仓库中更改的文件获取到本地仓库。origin是个远程仓库的默认shotname。
-$ git fetch origin用git merge将fetch下来的远程仓库与本地仓库进行合并。以remotename/branchname形式规定将哪个远程仓库的哪个分支与本地的代码进行合并。</description>
-    </item>
-    
-  </channel>
-</rss>

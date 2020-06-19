@@ -1,39 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Algorithm on Here is Bock&#39;s Site</title>
-    <link>http://ispobock.github.io/docs/algorithm/</link>
-    <description>Recent content in Algorithm on Here is Bock&#39;s Site</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="http://ispobock.github.io/docs/algorithm/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title></title>
-      <link>http://ispobock.github.io/docs/algorithm/red_black_tree/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://ispobock.github.io/docs/algorithm/red_black_tree/</guid>
-      <description>红黑树 vs AVL树 红黑树和AVL树都是BST二叉查找树。而且都是为了防止二叉查找树畸形而设计的。最为畸形的二叉查找树查找复杂度是   \(O(n)\)  ，即节点连成一线。
-而AVL树和红黑树采取的策略不同。AVL是一种严格的平衡二叉树，不容许左右子树的高度差超过1，其通过平衡因子来控制，在插入和删除节点时，通过左旋和右旋两个操作来调整树的高度。因此其查找复杂度是 \(O(log_{2}(n))\)  。因为n个节点的平衡二叉树最多 \(log_{2}(n)\)  层，这使得AVL树在查找上是最优的。
-然而，AVL树需要严格维持左右子树的高度差，因此每当插入和删除都需要复杂耗时的旋转操作维护。而作为一种弱平衡二叉树，通常情况下，红黑树的高度高于AVL树，且需要的旋转操作则要少很多，这使得红黑树在保证近似 \(O(log_{2}(n))\)  的复杂度情况下能够更加简洁地进行插入和删除操作。因此红黑树更适用于插入、删除较多的场景。
-  红黑树 红黑树并没有严格维持左右子树高度差，而是有自己的规则。
- 每个节点，增加一位以存储节点颜色，非黑即红，根节点为黑。 所有叶子节点（NULL）都是黑色的。 每个红色节点必须有两个黑色子节点，即一条路径上不会有两个连续的红色节点。 任意一节点，到其每个叶子节点的所有路径中，黑色节点数量相同。  以上约束（主要是规则3、4），保证了红黑树最关键的特性：从根节点到叶子节点的最长路径，不会长于最短路径的两倍。这使得红黑树大致平衡，保证了最坏情况下也是高效的。
-应用  JAVA，HashSet，HashMap，TreeSet，TreeMap C++，STL Linux，进程的虚拟内存区 IO多路复用epoll Nginx，定时器  </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://ispobock.github.io/docs/algorithm/trie/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://ispobock.github.io/docs/algorithm/trie/</guid>
-      <description>Trie前缀树 最近刷题学习到前缀树，这是一个非常有用的高级数据结构。Trie可用于快速高效查找字符串是否在集合中，只要将这个集合建为一棵Trie，即可以O(n)复杂度查找，n是待查找字符串长度。
-最佳实现 只有字符串末尾节点才挂上word，其余节点为null以作为区分一个节点是否为一个字符串的末尾。
-class TreeNode{TreeNode[] next = new TreeNode[26];String word; // 末尾节点挂上word}class Trie {TreeNode root;/** Initialize your data structure here. */public Trie() {root = new TreeNode();}/** Inserts a word into the trie. */public void insert(String word) {TreeNode p = root;for(char c : word.toCharArray()){int i = c - &amp;#39;a&amp;#39;;if(p.next[i] == null) p.next[i] = new TreeNode();p = p.</description>
-    </item>
-    
-  </channel>
-</rss>
