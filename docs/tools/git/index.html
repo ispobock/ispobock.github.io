@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Git学习手册 总结了一些Git的常规操作，以遍以后查看使用。
+本地仓库 首先得有个本地仓库，可由两种方法创建。
+$ git initgit init在当前目录创建一个仓库，并自动创建一个master分支。
+$ git clone [url]或者，将源程仓库从[url]clone下来，并将其全部分支和commit历史全部都一并clone下来。
+分支 得有一个分支，分支是版本控制的核心。master是默认创建的分支，也是主分支，其中存放的一般是deployment级别的代码。做修改一般会创建自己的分支。
+$ git branch [branch-name]查看当前分支。
+$ git status切换当前分支。
+$ git checkout [branch-name]管理本地与远程分支 将某（远程 or 本地）分支合并到当前本地分支。
+$ git merge [branch-name]查看本地和远程各有哪些分支。
+$ git branch -a删除远程分支。
+$ git push origin --delete [remote-branch-name]删除本地分支。
+$ git branch -d [branch-name]从远程仓库获取更改 首先用git remote查看下本地配置了哪些源程服务器。
+$ git remote -v然后用git fetch将源程仓库中更改的文件获取到本地仓库。origin是个远程仓库的默认shotname。
+$ git fetch origin用git merge将fetch下来的远程仓库与本地仓库进行合并。以remotename/branchname形式规定将哪个远程仓库的哪个分支与本地的代码进行合并。">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Git学习手册 总结了一些Git的常规操作，以遍以后查看使用。
+本地仓库 首先得有个本地仓库，可由两种方法创建。
+$ git initgit init在当前目录创建一个仓库，并自动创建一个master分支。
+$ git clone [url]或者，将源程仓库从[url]clone下来，并将其全部分支和commit历史全部都一并clone下来。
+分支 得有一个分支，分支是版本控制的核心。master是默认创建的分支，也是主分支，其中存放的一般是deployment级别的代码。做修改一般会创建自己的分支。
+$ git branch [branch-name]查看当前分支。
+$ git status切换当前分支。
+$ git checkout [branch-name]管理本地与远程分支 将某（远程 or 本地）分支合并到当前本地分支。
+$ git merge [branch-name]查看本地和远程各有哪些分支。
+$ git branch -a删除远程分支。
+$ git push origin --delete [remote-branch-name]删除本地分支。
+$ git branch -d [branch-name]从远程仓库获取更改 首先用git remote查看下本地配置了哪些源程服务器。
+$ git remote -v然后用git fetch将源程仓库中更改的文件获取到本地仓库。origin是个远程仓库的默认shotname。
+$ git fetch origin用git merge将fetch下来的远程仓库与本地仓库进行合并。以remotename/branchname形式规定将哪个远程仓库的哪个分支与本地的代码进行合并。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ispobock.github.io/docs/tools/git/" />
+
+<title>Git | Here is Bock&#39;s Site</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.b3215d9d1d18d9051e7fbe8f256ff80e30f41d29073b86348e230d297b771002.css" integrity="sha256-syFdnR0Y2QUef76PJW/4DjD0HSkHO4Y0jiMNKXt3EAI=">
+<script defer src="/en.search.min.c65e217f9ec1e74747f237726b4b2fcd49b7d2aed9466c3c6e5b241db46b4913.js" integrity="sha256-xl4hf57B50dH8jdya0svzUm30q7ZRmw8blskHbRrSRM="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>Here is Bock&#39;s Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Algorithm</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/algorithm/read_black_tree/" class="">Read Black Tree</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/algorithm/trie/" class="">Trie</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Development</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/development/restful/" class="">Restful</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <a href="/docs/linux/" class="">Linux</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Tools</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/tools/beamer/" class="">Beamer</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/tools/git/" class="active">Git</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Git</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#git学习手册">Git学习手册</a>
+      <ul>
+        <li><a href="#本地仓库">本地仓库</a></li>
+        <li><a href="#分支">分支</a></li>
+        <li><a href="#管理本地与远程分支">管理本地与远程分支</a></li>
+        <li><a href="#从远程仓库获取更改">从远程仓库获取更改</a></li>
+        <li><a href="#更改本地仓库">更改本地仓库</a></li>
+        <li><a href="#查看历史操作和回退版本">查看历史操作和回退版本</a></li>
+        <li><a href="#合并冲突与撤销">合并冲突与撤销</a></li>
+        <li><a href="#将本地仓库代码上传到远程仓库">将本地仓库代码上传到远程仓库</a></li>
+        <li><a href="#小结">小结</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h2 id="git学习手册">Git学习手册</h2>
+<p>总结了一些Git的常规操作，以遍以后查看使用。</p>
+<h3 id="本地仓库">本地仓库</h3>
+<p>首先得有个本地仓库，可由两种方法创建。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git init
+</code></pre></div><p><code>git init</code>在当前目录创建一个仓库，并自动创建一个master分支。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git clone <span style="color:#f92672">[</span>url<span style="color:#f92672">]</span>
+</code></pre></div><p>或者，将源程仓库从<code>[url]</code>clone下来，并将其全部分支和commit历史全部都一并clone下来。</p>
+<h3 id="分支">分支</h3>
+<p>得有一个分支，分支是版本控制的核心。master是默认创建的分支，也是主分支，其中存放的一般是deployment级别的代码。做修改一般会创建自己的分支。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git branch <span style="color:#f92672">[</span>branch-name<span style="color:#f92672">]</span>
+</code></pre></div><p>查看当前分支。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git status
+</code></pre></div><p>切换当前分支。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git checkout <span style="color:#f92672">[</span>branch-name<span style="color:#f92672">]</span>
+</code></pre></div><h3 id="管理本地与远程分支">管理本地与远程分支</h3>
+<p><strong>将某（远程 or 本地）分支合并到当前本地分支</strong>。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git merge <span style="color:#f92672">[</span>branch-name<span style="color:#f92672">]</span>
+</code></pre></div><p>查看<strong>本地和远程各有哪些分支</strong>。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git branch -a
+</code></pre></div><p>删除<strong>远程</strong>分支。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git push origin --delete <span style="color:#f92672">[</span>remote-branch-name<span style="color:#f92672">]</span>
+</code></pre></div><p>删除<strong>本地</strong>分支。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git branch -d <span style="color:#f92672">[</span>branch-name<span style="color:#f92672">]</span>
+</code></pre></div><h3 id="从远程仓库获取更改">从远程仓库获取更改</h3>
+<p>首先用<code>git remote</code>查看下本地配置了哪些源程服务器。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git remote -v
+</code></pre></div><p>然后用<code>git fetch</code>将源程仓库中更改的文件获取到本地仓库。origin是个远程仓库的默认shotname。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git fetch origin
+</code></pre></div><p>用<code>git merge</code>将fetch下来的远程仓库与本地仓库进行合并。以<code>remotename/branchname</code>形式规定将哪个远程仓库的<strong>哪个分支</strong>与本地的代码进行合并。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git merge origin/master
+</code></pre></div><p><code>git pull</code>将<code>git fetch</code>和<code>git merge</code>合二为一。以<code>remotename branchname</code>规定要合并的分支。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git pull origin master
+</code></pre></div><h3 id="更改本地仓库">更改本地仓库</h3>
+<p>对本地的代码进行一定修改后，要先<code>git add</code>到本地仓库中，然后<code>git commit</code>。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git add -A
+$ git commit -m <span style="color:#e6db74">&#34;describe this commit&#34;</span>
+</code></pre></div><h3 id="查看历史操作和回退版本">查看历史操作和回退版本</h3>
+<p>先查看一下当前分支的所有历史版本。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git log
+</code></pre></div><p>找到想要退回的版本号（commit），然后用<code>reset</code>进行回退。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git reset --hard <span style="color:#f92672">[</span>commit<span style="color:#f92672">]</span>
+$ git reset --soft <span style="color:#f92672">[</span>commit<span style="color:#f92672">]</span>
+</code></pre></div><p>其中<code>--hard</code>是回退到该版本，并且<strong>本地代码也重置到该版本</strong>。<code>--soft</code>是仅回退到该版本，本地代码仍然不动。</p>
+<h3 id="合并冲突与撤销">合并冲突与撤销</h3>
+<p>合并的时候会进行到一半突然出现一个<strong>合并冲突</strong>，这很常见，是因为两个人都对同一个文件进行的不同的修改。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git merge --abort
+</code></pre></div><p>可以在发生冲突时先用<code>--abort</code>终止合并，退回到合并之前的状态，将冲突的地方<strong>协商修改</strong>后，再进行合并。</p>
+<p>若合并后发现了一些错误，可以通过上述的<code>git reset --hard</code>回退到上一版本。</p>
+<h3 id="将本地仓库代码上传到远程仓库">将本地仓库代码上传到远程仓库</h3>
+<p>将<strong>本地仓库的某指定分支</strong>上传到<strong>远程仓库的某指定分支</strong>。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git push origin master:master
+</code></pre></div><h3 id="小结">小结</h3>
+<p>最重要的是要有<strong>仓库</strong>和<strong>分支</strong>两个概念。仓库和分支都有<strong>本地</strong>和<strong>远程</strong>之分。本地仓库可以通过<code>git init</code>,<code>git branch</code>,<code>git checkout</code>,<code>git add</code>,<code>git commit</code>, <code>git merge</code>, <code>git reset</code>等进行操作。</p>
+<p>对远程仓库，可以用<code>git remote</code>, <code>git fetch</code>, <code>git merge</code>, <code>git pull</code>, <code>git push</code>来进行操作。</p>
+<p>其核心是，将远程clone到本地，对本地进行修改，通过分支和版本来进行版本控制，最后与远程进行同步。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#git学习手册">Git学习手册</a>
+      <ul>
+        <li><a href="#本地仓库">本地仓库</a></li>
+        <li><a href="#分支">分支</a></li>
+        <li><a href="#管理本地与远程分支">管理本地与远程分支</a></li>
+        <li><a href="#从远程仓库获取更改">从远程仓库获取更改</a></li>
+        <li><a href="#更改本地仓库">更改本地仓库</a></li>
+        <li><a href="#查看历史操作和回退版本">查看历史操作和回退版本</a></li>
+        <li><a href="#合并冲突与撤销">合并冲突与撤销</a></li>
+        <li><a href="#将本地仓库代码上传到远程仓库">将本地仓库代码上传到远程仓库</a></li>
+        <li><a href="#小结">小结</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Linux实用操作备忘录 总结一些Linux (Ubuntu) 实用的操作。
+进程悬挂 在使用vim这类编辑器时候经常用到。
+ 命令末尾加上 &amp; ，进程后台运行 运行中的前台进程，Ctr&#43;z，转移到后台暂停 fg，将后台进程转至前台 jobs，查看当前悬挂的后台进程 kill %i 杀死第i个进程   快捷操作  ctr&#43;l 等价于clear   防火墙 ufw enable|disable ufw allow|deny [service] ufw delete allow [service] 删除某条规则 ufw status   查看端口占用 将目前tcp协议监听的端口全部打出来。
+ netstat -nltp netstat -anp  参数-n: 打印数值地址, -a: all, -l: only listening, -p: 显示套接字属于的PID和进程名， -t: only tcp, -u: only udp
+ vim   i/o等进入编辑模式 esc进入命令模式 命令模式下，/ &#43; 要查找的关键词 &#43; enter，查找关键词，按n下一个 G和gg分别跳至开头/末尾 :wq保存退出，:q!">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Linux" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://ispobock.github.io/docs/linux/" />
+
+<title>Linux | Here is Bock&#39;s Site</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.b3215d9d1d18d9051e7fbe8f256ff80e30f41d29073b86348e230d297b771002.css" integrity="sha256-syFdnR0Y2QUef76PJW/4DjD0HSkHO4Y0jiMNKXt3EAI=">
+<script defer src="/en.search.min.c65e217f9ec1e74747f237726b4b2fcd49b7d2aed9466c3c6e5b241db46b4913.js" integrity="sha256-xl4hf57B50dH8jdya0svzUm30q7ZRmw8blskHbRrSRM="></script>
+<link rel="alternate" type="application/rss+xml" href="http://ispobock.github.io/docs/linux/index.xml" title="Here is Bock's Site" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>Here is Bock&#39;s Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Algorithm</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/algorithm/read_black_tree/" class="">Read Black Tree</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/algorithm/trie/" class="">Trie</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Development</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/development/restful/" class="">Restful</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <a href="/docs/linux/" class="active">Linux</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Tools</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/tools/beamer/" class="">Beamer</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/tools/git/" class="">Git</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Linux</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#linux实用操作备忘录">Linux实用操作备忘录</a>
+      <ul>
+        <li><a href="#进程悬挂">进程悬挂</a></li>
+        <li><a href="#快捷操作">快捷操作</a></li>
+        <li><a href="#防火墙">防火墙</a></li>
+        <li><a href="#查看端口占用">查看端口占用</a></li>
+        <li><a href="#vim">vim</a></li>
+        <li><a href="#服务管理">服务管理</a></li>
+        <li><a href="#查看进程">查看进程</a></li>
+        <li><a href="#查看内存cpu使用">查看内存/CPU使用</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h2 id="linux实用操作备忘录">Linux实用操作备忘录</h2>
+<p>总结一些Linux (Ubuntu) 实用的操作。</p>
+<h3 id="进程悬挂">进程悬挂</h3>
+<p>在使用vim这类编辑器时候经常用到。</p>
+<ul>
+<li>命令末尾加上 <strong>&amp;</strong> ，进程后台运行</li>
+<li>运行中的前台进程，<strong>Ctr+z</strong>，转移到后台暂停</li>
+<li><strong>fg</strong>，将后台进程转至前台</li>
+<li><strong>jobs</strong>，查看当前悬挂的后台进程</li>
+<li><strong>kill %i</strong> 杀死第i个进程</li>
+</ul>
+<hr>
+<h3 id="快捷操作">快捷操作</h3>
+<ul>
+<li><code>ctr+l</code> 等价于<code>clear</code></li>
+</ul>
+<hr>
+<h3 id="防火墙">防火墙</h3>
+<pre><code>ufw enable|disable
+ufw allow|deny [service]
+ufw delete allow [service] 删除某条规则
+ufw status
+</code></pre>
+<hr>
+<h3 id="查看端口占用">查看端口占用</h3>
+<p>将目前tcp协议监听的端口全部打出来。</p>
+<pre><code> netstat -nltp
+ netstat -anp
+</code></pre>
+<p>参数<code>-n</code>: 打印数值地址, <code>-a</code>: all, <code>-l</code>: only listening,
+<code>-p</code>: 显示套接字属于的PID和进程名，
+<code>-t</code>: only tcp, <code>-u</code>: only udp</p>
+<hr>
+<h3 id="vim">vim</h3>
+<ul>
+<li><code> i</code>/<code>o</code>等进入编辑模式</li>
+<li><code>esc</code>进入命令模式</li>
+<li>命令模式下，<code>/</code> + 要查找的关键词 + <code>enter</code>，查找关键词，按<code>n</code>下一个</li>
+<li><code>G</code>和<code>gg</code>分别跳至开头/末尾</li>
+<li><code>:wq</code>保存退出，<code>:q!</code>强制退出</li>
+</ul>
+<hr>
+<h3 id="服务管理">服务管理</h3>
+<pre><code>service nginx status
+service nginx start|stop|restart
+</code></pre>
+<p>通常需要列出所有服务，查看哪些正在运行，这时就要使用<code>service --status-all</code>。</p>
+<p>注意这里是Ubuntu系统用的是<code>service</code>来管理，CentOS/RHEL 7开始使用systemd服务来代替daemon服务，因此使用<code>systemctl</code>来管理服务。</p>
+<hr>
+<h3 id="查看进程">查看进程</h3>
+<pre><code>ps -ef | grep xxx
+ps -aux
+top
+</code></pre>
+<p><strong>查看进程详情</strong>可用<code>ll /proc/PID</code><br>
+<code>kill -9 PID</code> 杀死进程</p>
+<hr>
+<h3 id="查看内存cpu使用">查看内存/CPU使用</h3>
+<pre><code>htop
+</code></pre>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#linux实用操作备忘录">Linux实用操作备忘录</a>
+      <ul>
+        <li><a href="#进程悬挂">进程悬挂</a></li>
+        <li><a href="#快捷操作">快捷操作</a></li>
+        <li><a href="#防火墙">防火墙</a></li>
+        <li><a href="#查看端口占用">查看端口占用</a></li>
+        <li><a href="#vim">vim</a></li>
+        <li><a href="#服务管理">服务管理</a></li>
+        <li><a href="#查看进程">查看进程</a></li>
+        <li><a href="#查看内存cpu使用">查看内存/CPU使用</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

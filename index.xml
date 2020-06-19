@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Introduction on Here is Bock&#39;s Site</title>
+    <link>http://ispobock.github.io/</link>
+    <description>Recent content in Introduction on Here is Bock&#39;s Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://ispobock.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>http://ispobock.github.io/docs/algorithm/read_black_tree/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://ispobock.github.io/docs/algorithm/read_black_tree/</guid>
+      <description>红黑树 vs AVL树 红黑树和AVL树都是BST二叉查找树。而且都是为了防止二叉查找树畸形而设计的。最为畸形的二叉查找树查找复杂度是   \(O(n)\)  ，即节点连成一线。
+而AVL树和红黑树采取的策略不同。AVL是一种严格的平衡二叉树，不容许左右子树的高度差超过1，其通过平衡因子来控制，在插入和删除节点时，通过左旋和右旋两个操作来调整树的高度。因此其查找复杂度是 \(O(log_{2}(n))\)  。因为n个节点的平衡二叉树最多 \(log_{2}(n)\)  层，这使得AVL树在查找上是最优的。
+然而，AVL树需要严格维持左右子树的高度差，因此每当插入和删除都需要复杂耗时的旋转操作维护。而作为一种弱平衡二叉树，通常情况下，红黑树的高度高于AVL树，且需要的旋转操作则要少很多，这使得红黑树在保证近似 \(O(log_{2}(n))\)  的复杂度情况下能够更加简洁地进行插入和删除操作。因此红黑树更适用于插入、删除较多的场景。
+  红黑树 红黑树并没有严格维持左右子树高度差，而是有自己的规则。
+ 每个节点，增加一位以存储节点颜色，非黑即红，根节点为黑。 所有叶子节点（NULL）都是黑色的。 每个红色节点必须有两个黑色子节点，即一条路径上不会有两个连续的红色节点。 任意一节点，到其每个叶子节点的所有路径中，黑色节点数量相同。  以上约束（主要是规则3、4），保证了红黑树最关键的特性：从根节点到叶子节点的最长路径，不会长于最短路径的两倍。这使得红黑树大致平衡，保证了最坏情况下也是高效的。
+应用  JAVA，HashSet，HashMap，TreeSet，TreeMap C++，STL Linux，进程的虚拟内存区 IO多路复用epoll Nginx，定时器  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://ispobock.github.io/docs/algorithm/trie/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://ispobock.github.io/docs/algorithm/trie/</guid>
+      <description>Trie前缀树 最近刷题学习到前缀树，这是一个非常有用的高级数据结构。Trie可用于快速高效查找字符串是否在集合中，只要将这个集合建为一棵Trie，即可以O(n)复杂度查找，n是待查找字符串长度。
+最佳实现 只有字符串末尾节点才挂上word，其余节点为null以作为区分一个节点是否为一个字符串的末尾。
+class TreeNode{TreeNode[] next = new TreeNode[26];String word; // 末尾节点挂上word}class Trie {TreeNode root;/** Initialize your data structure here. */public Trie() {root = new TreeNode();}/** Inserts a word into the trie. */public void insert(String word) {TreeNode p = root;for(char c : word.toCharArray()){int i = c - &amp;#39;a&amp;#39;;if(p.next[i] == null) p.next[i] = new TreeNode();p = p.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://ispobock.github.io/docs/development/restful/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://ispobock.github.io/docs/development/restful/</guid>
+      <description>RESTful架构 本篇是我学习RESTful的笔记。
+ RESTful，即Representational State Transfer，表现层状态转换。以资源为导向，每个URI(统一资源标识符)标识一个资源，对应有get/post/put/delete方法。
+（URL(统一资源定位符)是URI最普遍的的一种形式，URI包括URL和URN(统一资源名)）
+传统的Web后端仅仅是以方法为导向，后端写了N个方法，每个路由映射到一个方法，用于处理请求。
+Resources REST其实是资源的表现层状态转化，资源是网络中的一个实体，可以是文本、图片、音频等，用URI来进行唯一定位。
+Representation 资源的表现层，即呈现出来的形式，文本可以是用txt、xml、json、html等多种形式呈现出来。
+State Transfer 状态转换是指资源表现层的状态转换，用户是通过HTTP协议来与服务器进行交互，以操控网络中的资源，使其表现层发生状态转化（比如查插删改）。正好可以用HTTP的四个动作GET/POST/PUT/DELETE来完成。
+小结  每个URI代表一种资源。 用户通过GET/POST/PUT/DELETE实现资源的表现层状态转化。  注意事项  URI表示资源，不该包含动词。动作由HTTP协议的GET/POST/PUT/DELETE来加以区分。 URI中不包含版本号，版本号通过HTTP请求头中的Accept字段区分。  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://ispobock.github.io/docs/tools/beamer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://ispobock.github.io/docs/tools/beamer/</guid>
+      <description>Beamer Beamer是一个简单高效的LaTeX Slides模板，用其制作学术PPT会更加简洁美观。这里是一个Beamer模板，包括文档结构搭建、分栏、模块化文本、参考文献引用、算法编写、字体设置以及图片插入等功能的实现。
+ 环境配置：CTeX + vscode + LaTeX Workshop插件 参考文档：beameruserguide 初始文档结构：  整体框架 \documentclass{beamer}\usetheme{EastLansing} % Beamer主题样式v 3.0\usecolortheme{rose} % Beamer颜色主题样式\usefonttheme[onlylarge]{structuresmallcapsserif}\title[]{} % 缩写，全写\author[]{}\institute[]{}\begin{document}\begin{frame}\titlepage\end{frame}\section*{Outline}\begin{frame}\tableofcontents\end{frame}\section{Introduction}\subsection{Overview}\begin{frame}\frametitle{}%\framesubtitle{} Content\end{frame}\end{document}加外框的文本 % definition\begin{definition}definition...\end{definition}% example\begin{example}\begin{itemize}\item emample1\item emample2\end{itemize}\end{example}% block\begin{block}{Answered Questions}How many primes are there?\end{block}% proof\begin{proof}\end{proof}分栏 \begin{columns}\column{.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://ispobock.github.io/docs/tools/git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://ispobock.github.io/docs/tools/git/</guid>
+      <description>Git学习手册 总结了一些Git的常规操作，以遍以后查看使用。
+本地仓库 首先得有个本地仓库，可由两种方法创建。
+$ git initgit init在当前目录创建一个仓库，并自动创建一个master分支。
+$ git clone [url]或者，将源程仓库从[url]clone下来，并将其全部分支和commit历史全部都一并clone下来。
+分支 得有一个分支，分支是版本控制的核心。master是默认创建的分支，也是主分支，其中存放的一般是deployment级别的代码。做修改一般会创建自己的分支。
+$ git branch [branch-name]查看当前分支。
+$ git status切换当前分支。
+$ git checkout [branch-name]管理本地与远程分支 将某（远程 or 本地）分支合并到当前本地分支。
+$ git merge [branch-name]查看本地和远程各有哪些分支。
+$ git branch -a删除远程分支。
+$ git push origin --delete [remote-branch-name]删除本地分支。
+$ git branch -d [branch-name]从远程仓库获取更改 首先用git remote查看下本地配置了哪些源程服务器。
+$ git remote -v然后用git fetch将源程仓库中更改的文件获取到本地仓库。origin是个远程仓库的默认shotname。
+$ git fetch origin用git merge将fetch下来的远程仓库与本地仓库进行合并。以remotename/branchname形式规定将哪个远程仓库的哪个分支与本地的代码进行合并。</description>
+    </item>
+    
+  </channel>
+</rss>

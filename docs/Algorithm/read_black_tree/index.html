@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="红黑树 vs AVL树 红黑树和AVL树都是BST二叉查找树。而且都是为了防止二叉查找树畸形而设计的。最为畸形的二叉查找树查找复杂度是   \(O(n)\)  ，即节点连成一线。
+而AVL树和红黑树采取的策略不同。AVL是一种严格的平衡二叉树，不容许左右子树的高度差超过1，其通过平衡因子来控制，在插入和删除节点时，通过左旋和右旋两个操作来调整树的高度。因此其查找复杂度是 \(O(log_{2}(n))\)  。因为n个节点的平衡二叉树最多 \(log_{2}(n)\)  层，这使得AVL树在查找上是最优的。
+然而，AVL树需要严格维持左右子树的高度差，因此每当插入和删除都需要复杂耗时的旋转操作维护。而作为一种弱平衡二叉树，通常情况下，红黑树的高度高于AVL树，且需要的旋转操作则要少很多，这使得红黑树在保证近似 \(O(log_{2}(n))\)  的复杂度情况下能够更加简洁地进行插入和删除操作。因此红黑树更适用于插入、删除较多的场景。
+  红黑树 红黑树并没有严格维持左右子树高度差，而是有自己的规则。
+ 每个节点，增加一位以存储节点颜色，非黑即红，根节点为黑。 所有叶子节点（NULL）都是黑色的。 每个红色节点必须有两个黑色子节点，即一条路径上不会有两个连续的红色节点。 任意一节点，到其每个叶子节点的所有路径中，黑色节点数量相同。  以上约束（主要是规则3、4），保证了红黑树最关键的特性：从根节点到叶子节点的最长路径，不会长于最短路径的两倍。这使得红黑树大致平衡，保证了最坏情况下也是高效的。
+应用  JAVA，HashSet，HashMap，TreeSet，TreeMap C&#43;&#43;，STL Linux，进程的虚拟内存区 IO多路复用epoll Nginx，定时器  ">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="红黑树 vs AVL树 红黑树和AVL树都是BST二叉查找树。而且都是为了防止二叉查找树畸形而设计的。最为畸形的二叉查找树查找复杂度是   \(O(n)\)  ，即节点连成一线。
+而AVL树和红黑树采取的策略不同。AVL是一种严格的平衡二叉树，不容许左右子树的高度差超过1，其通过平衡因子来控制，在插入和删除节点时，通过左旋和右旋两个操作来调整树的高度。因此其查找复杂度是 \(O(log_{2}(n))\)  。因为n个节点的平衡二叉树最多 \(log_{2}(n)\)  层，这使得AVL树在查找上是最优的。
+然而，AVL树需要严格维持左右子树的高度差，因此每当插入和删除都需要复杂耗时的旋转操作维护。而作为一种弱平衡二叉树，通常情况下，红黑树的高度高于AVL树，且需要的旋转操作则要少很多，这使得红黑树在保证近似 \(O(log_{2}(n))\)  的复杂度情况下能够更加简洁地进行插入和删除操作。因此红黑树更适用于插入、删除较多的场景。
+  红黑树 红黑树并没有严格维持左右子树高度差，而是有自己的规则。
+ 每个节点，增加一位以存储节点颜色，非黑即红，根节点为黑。 所有叶子节点（NULL）都是黑色的。 每个红色节点必须有两个黑色子节点，即一条路径上不会有两个连续的红色节点。 任意一节点，到其每个叶子节点的所有路径中，黑色节点数量相同。  以上约束（主要是规则3、4），保证了红黑树最关键的特性：从根节点到叶子节点的最长路径，不会长于最短路径的两倍。这使得红黑树大致平衡，保证了最坏情况下也是高效的。
+应用  JAVA，HashSet，HashMap，TreeSet，TreeMap C&#43;&#43;，STL Linux，进程的虚拟内存区 IO多路复用epoll Nginx，定时器  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ispobock.github.io/docs/algorithm/read_black_tree/" />
+
+<title>Read Black Tree | Here is Bock&#39;s Site</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.b3215d9d1d18d9051e7fbe8f256ff80e30f41d29073b86348e230d297b771002.css" integrity="sha256-syFdnR0Y2QUef76PJW/4DjD0HSkHO4Y0jiMNKXt3EAI=">
+<script defer src="/en.search.min.c65e217f9ec1e74747f237726b4b2fcd49b7d2aed9466c3c6e5b241db46b4913.js" integrity="sha256-xl4hf57B50dH8jdya0svzUm30q7ZRmw8blskHbRrSRM="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>Here is Bock&#39;s Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Algorithm</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/algorithm/read_black_tree/" class="active">Read Black Tree</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/algorithm/trie/" class="">Trie</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Development</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/development/restful/" class="">Restful</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <a href="/docs/linux/" class="">Linux</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Tools</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/tools/beamer/" class="">Beamer</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/tools/git/" class="">Git</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Read Black Tree</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#红黑树-vs-avl树">红黑树 vs AVL树</a>
+      <ul>
+        <li><a href="#红黑树">红黑树</a></li>
+        <li><a href="#应用">应用</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h2 id="红黑树-vs-avl树">红黑树 vs AVL树</h2>
+<p>红黑树和AVL树都是BST二叉查找树。而且都是为了防止二叉查找树畸形而设计的。最为畸形的二叉查找树查找复杂度是
+<link rel="stylesheet" href="/katex/katex.min.css" />
+<script defer src="/katex/katex.min.js"></script>
+<script defer src="/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
+  \(O(n)\)
+</span>
+，即节点连成一线。</p>
+<p>而AVL树和红黑树采取的策略不同。AVL是一种严格的平衡二叉树，不容许左右子树的高度差超过1，其通过平衡因子来控制，在插入和删除节点时，通过<strong>左旋</strong>和<strong>右旋</strong>两个操作来调整树的高度。因此其查找复杂度是<span>
+  \(O(log_{2}(n))\)
+</span>
+。因为n个节点的平衡二叉树最多<span>
+  \(log_{2}(n)\)
+</span>
+层，这使得AVL树在查找上是最优的。</p>
+<p>然而，AVL树需要<strong>严格维持左右子树的高度差</strong>，因此每当插入和删除都需要复杂耗时的旋转操作维护。而作为一种弱平衡二叉树，通常情况下，红黑树的高度高于AVL树，且<strong>需要的旋转操作则要少很多</strong>，这使得红黑树在保证近似<span>
+  \(O(log_{2}(n))\)
+</span>
+的复杂度情况下能够更加简洁地进行插入和删除操作。因此红黑树更适用于插入、删除较多的场景。</p>
+<hr>
+<p><img src="/docs/Algorithm/imgs/read_black_tree.png" alt="read_black_tree.png" /></p>
+<hr>
+<h3 id="红黑树">红黑树</h3>
+<p>红黑树并没有严格维持左右子树高度差，而是有自己的规则。</p>
+<ol>
+<li>每个节点，增加一位以存储节点颜色，非黑即红，根节点为黑。</li>
+<li>所有叶子节点（NULL）都是黑色的。</li>
+<li>每个红色节点必须有两个黑色子节点，即一条路径上不会有<strong>两个连续的红色节点</strong>。</li>
+<li>任意一节点，到其每个叶子节点的所有路径中，<strong>黑色节点数量相同</strong>。</li>
+</ol>
+<p>以上约束（主要是规则3、4），保证了红黑树最关键的特性：<strong>从根节点到叶子节点的最长路径，不会长于最短路径的两倍</strong>。这使得红黑树<strong>大致平衡</strong>，保证了最坏情况下也是高效的。</p>
+<h3 id="应用">应用</h3>
+<ul>
+<li>JAVA，HashSet，HashMap，TreeSet，TreeMap</li>
+<li>C++，STL</li>
+<li>Linux，进程的虚拟内存区</li>
+<li>IO多路复用epoll</li>
+<li>Nginx，定时器</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#红黑树-vs-avl树">红黑树 vs AVL树</a>
+      <ul>
+        <li><a href="#红黑树">红黑树</a></li>
+        <li><a href="#应用">应用</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
