@@ -4,35 +4,33 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Git学习手册 总结了一些Git的常规操作，以遍以后查看使用。
+<meta name="description" content="Git学习手册 总结了一些Git的常规操作，以便以后查看使用。
 本地仓库 首先得有个本地仓库，可由两种方法创建。
 $ git initgit init在当前目录创建一个仓库，并自动创建一个master分支。
 $ git clone [url]或者，将源程仓库从[url]clone下来，并将其全部分支和commit历史全部都一并clone下来。
-分支 得有一个分支，分支是版本控制的核心。master是默认创建的分支，也是主分支，其中存放的一般是deployment级别的代码。做修改一般会创建自己的分支。
+如果想要直接把项目文件放到当前文件夹下，可以使用：
+$ git clone [url] .这样当前目录就成为了一个仓库，存在一个.git文件夹。
+配置账户信息 如果是第一次使用Git，需要在git commit之前设置一下用户名和密码，这将在commit时用于身份识别。
+$ git config --global user.name &#34;your username&#34;$ git config --global user.email &#34;your email address&#34;配置好了之后，可以通过git config --list，查看 git 的全局用户名和邮箱。
+$ git config --list分支 得有一个分支，分支是版本控制的核心。master是默认创建的分支，也是主分支，其中存放的一般是deployment级别的代码。做修改一般会创建自己的分支。
 $ git branch [branch-name]查看当前分支。
 $ git status切换当前分支。
 $ git checkout [branch-name]管理本地与远程分支 将某（远程 or 本地）分支合并到当前本地分支。
-$ git merge [branch-name]查看本地和远程各有哪些分支。
-$ git branch -a删除远程分支。
-$ git push origin --delete [remote-branch-name]删除本地分支。
-$ git branch -d [branch-name]从远程仓库获取更改 首先用git remote查看下本地配置了哪些源程服务器。
-$ git remote -v然后用git fetch将源程仓库中更改的文件获取到本地仓库。origin是个远程仓库的默认shotname。
-$ git fetch origin用git merge将fetch下来的远程仓库与本地仓库进行合并。以remotename/branchname形式规定将哪个远程仓库的哪个分支与本地的代码进行合并。">
+$ git merge [branch-name]查看本地和远程各有哪些分支。">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
-<meta property="og:description" content="Git学习手册 总结了一些Git的常规操作，以遍以后查看使用。
+<meta property="og:description" content="Git学习手册 总结了一些Git的常规操作，以便以后查看使用。
 本地仓库 首先得有个本地仓库，可由两种方法创建。
 $ git initgit init在当前目录创建一个仓库，并自动创建一个master分支。
 $ git clone [url]或者，将源程仓库从[url]clone下来，并将其全部分支和commit历史全部都一并clone下来。
-分支 得有一个分支，分支是版本控制的核心。master是默认创建的分支，也是主分支，其中存放的一般是deployment级别的代码。做修改一般会创建自己的分支。
+如果想要直接把项目文件放到当前文件夹下，可以使用：
+$ git clone [url] .这样当前目录就成为了一个仓库，存在一个.git文件夹。
+配置账户信息 如果是第一次使用Git，需要在git commit之前设置一下用户名和密码，这将在commit时用于身份识别。
+$ git config --global user.name &#34;your username&#34;$ git config --global user.email &#34;your email address&#34;配置好了之后，可以通过git config --list，查看 git 的全局用户名和邮箱。
+$ git config --list分支 得有一个分支，分支是版本控制的核心。master是默认创建的分支，也是主分支，其中存放的一般是deployment级别的代码。做修改一般会创建自己的分支。
 $ git branch [branch-name]查看当前分支。
 $ git status切换当前分支。
 $ git checkout [branch-name]管理本地与远程分支 将某（远程 or 本地）分支合并到当前本地分支。
-$ git merge [branch-name]查看本地和远程各有哪些分支。
-$ git branch -a删除远程分支。
-$ git push origin --delete [remote-branch-name]删除本地分支。
-$ git branch -d [branch-name]从远程仓库获取更改 首先用git remote查看下本地配置了哪些源程服务器。
-$ git remote -v然后用git fetch将源程仓库中更改的文件获取到本地仓库。origin是个远程仓库的默认shotname。
-$ git fetch origin用git merge将fetch下来的远程仓库与本地仓库进行合并。以remotename/branchname形式规定将哪个远程仓库的哪个分支与本地的代码进行合并。" />
+$ git merge [branch-name]查看本地和远程各有哪些分支。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://ispobock.github.io/docs/tools/git/" />
 
@@ -40,7 +38,7 @@ $ git fetch origin用git merge将fetch下来的远程仓库与本地仓库进�
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.b3215d9d1d18d9051e7fbe8f256ff80e30f41d29073b86348e230d297b771002.css" integrity="sha256-syFdnR0Y2QUef76PJW/4DjD0HSkHO4Y0jiMNKXt3EAI=">
-<script defer src="/en.search.min.f82ec73a86902b60af52260cbb1157c40373867d2178dbaf3e774115413c6100.js" integrity="sha256-&#43;C7HOoaQK2CvUiYMuxFXxANzhn0heNuvPndBFUE8YQA="></script>
+<script defer src="/en.search.min.67364c8d3998182fb487f36b26742d3e3cc67e2bf91eaa78b39ce4aeb0367519.js" integrity="sha256-ZzZMjTmYGC&#43;0h/NrJnQtPjzGfiv5Hqp4s5zkrrA2dRk="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -290,6 +288,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#git学习手册">Git学习手册</a>
       <ul>
         <li><a href="#本地仓库">本地仓库</a></li>
+        <li><a href="#配置账户信息">配置账户信息</a></li>
         <li><a href="#分支">分支</a></li>
         <li><a href="#管理本地与远程分支">管理本地与远程分支</a></li>
         <li><a href="#从远程仓库获取更改">从远程仓库获取更改</a></li>
@@ -312,14 +311,23 @@ https://github.com/alex-shpak/hugo-book
       
       
   <article class="markdown"><h2 id="git学习手册">Git学习手册</h2>
-<p>总结了一些Git的常规操作，以遍以后查看使用。</p>
+<p>总结了一些Git的常规操作，以便以后查看使用。</p>
 <h3 id="本地仓库">本地仓库</h3>
 <p>首先得有个本地仓库，可由两种方法创建。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git init
 </code></pre></div><p><code>git init</code>在当前目录创建一个仓库，并自动创建一个master分支。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git clone <span style="color:#f92672">[</span>url<span style="color:#f92672">]</span>
-</code></pre></div><p>或者，将源程仓库从<code>[url]</code>clone下来，并将其全部分支和commit历史全部都一并clone下来。</p>
-<h3 id="分支">分支</h3>
+</code></pre></div><p>或者，将源程仓库从<code>[url]</code>clone下来，并将其全部分支和commit历史全部都一并clone下来。<br>
+如果想要直接把项目文件放到当前文件夹下，可以使用：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git clone <span style="color:#f92672">[</span>url<span style="color:#f92672">]</span> .
+</code></pre></div><p>这样当前目录就成为了一个仓库，存在一个<code>.git</code>文件夹。</p>
+<h3 id="配置账户信息">配置账户信息</h3>
+<p>如果是第一次使用Git，需要在<code>git commit</code>之前设置一下用户名和密码，这将在commit时用于身份识别。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git config --global user.name <span style="color:#e6db74">&#34;your username&#34;</span>
+$ git config --global user.email <span style="color:#e6db74">&#34;your email address&#34;</span>
+</code></pre></div><p>配置好了之后，可以通过<code>git config --list</code>，查看 git 的全局用户名和邮箱。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git config --list
+</code></pre></div><h3 id="分支">分支</h3>
 <p>得有一个分支，分支是版本控制的核心。master是默认创建的分支，也是主分支，其中存放的一般是deployment级别的代码。做修改一般会创建自己的分支。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git branch <span style="color:#f92672">[</span>branch-name<span style="color:#f92672">]</span>
 </code></pre></div><p>查看当前分支。</p>
@@ -404,6 +412,7 @@ $ git reset --soft <span style="color:#f92672">[</span>commit<span style="color:
     <li><a href="#git学习手册">Git学习手册</a>
       <ul>
         <li><a href="#本地仓库">本地仓库</a></li>
+        <li><a href="#配置账户信息">配置账户信息</a></li>
         <li><a href="#分支">分支</a></li>
         <li><a href="#管理本地与远程分支">管理本地与远程分支</a></li>
         <li><a href="#从远程仓库获取更改">从远程仓库获取更改</a></li>

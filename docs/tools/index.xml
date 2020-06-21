@@ -26,20 +26,19 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://ispobock.github.io/docs/tools/git/</guid>
-      <description>Git学习手册 总结了一些Git的常规操作，以遍以后查看使用。
+      <description>Git学习手册 总结了一些Git的常规操作，以便以后查看使用。
 本地仓库 首先得有个本地仓库，可由两种方法创建。
 $ git initgit init在当前目录创建一个仓库，并自动创建一个master分支。
 $ git clone [url]或者，将源程仓库从[url]clone下来，并将其全部分支和commit历史全部都一并clone下来。
-分支 得有一个分支，分支是版本控制的核心。master是默认创建的分支，也是主分支，其中存放的一般是deployment级别的代码。做修改一般会创建自己的分支。
+如果想要直接把项目文件放到当前文件夹下，可以使用：
+$ git clone [url] .这样当前目录就成为了一个仓库，存在一个.git文件夹。
+配置账户信息 如果是第一次使用Git，需要在git commit之前设置一下用户名和密码，这将在commit时用于身份识别。
+$ git config --global user.name &amp;#34;your username&amp;#34;$ git config --global user.email &amp;#34;your email address&amp;#34;配置好了之后，可以通过git config --list，查看 git 的全局用户名和邮箱。
+$ git config --list分支 得有一个分支，分支是版本控制的核心。master是默认创建的分支，也是主分支，其中存放的一般是deployment级别的代码。做修改一般会创建自己的分支。
 $ git branch [branch-name]查看当前分支。
 $ git status切换当前分支。
 $ git checkout [branch-name]管理本地与远程分支 将某（远程 or 本地）分支合并到当前本地分支。
-$ git merge [branch-name]查看本地和远程各有哪些分支。
-$ git branch -a删除远程分支。
-$ git push origin --delete [remote-branch-name]删除本地分支。
-$ git branch -d [branch-name]从远程仓库获取更改 首先用git remote查看下本地配置了哪些源程服务器。
-$ git remote -v然后用git fetch将源程仓库中更改的文件获取到本地仓库。origin是个远程仓库的默认shotname。
-$ git fetch origin用git merge将fetch下来的远程仓库与本地仓库进行合并。以remotename/branchname形式规定将哪个远程仓库的哪个分支与本地的代码进行合并。</description>
+$ git merge [branch-name]查看本地和远程各有哪些分支。</description>
     </item>
     
   </channel>
