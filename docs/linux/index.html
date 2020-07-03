@@ -18,7 +18,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.b3215d9d1d18d9051e7fbe8f256ff80e30f41d29073b86348e230d297b771002.css" integrity="sha256-syFdnR0Y2QUef76PJW/4DjD0HSkHO4Y0jiMNKXt3EAI=">
-<script defer src="/en.search.min.3c4f9cd729ccc5f07b73e4c42e1c02f1f9d7eab1a2ef99264f9865290c52daae.js" integrity="sha256-PE&#43;c1ynMxfB7c&#43;TELhwC8fnX6rGi75kmT5hlKQxS2q4="></script>
+<script defer src="/en.search.min.82eab5cb18667c3681ce363803a97e4fe4aee916614a1f25026d5051912ca1de.js" integrity="sha256-guq1yxhmfDaBzjY4A6l&#43;T&#43;Su6RZhSh8lAm1QUZEsod4="></script>
 <link rel="alternate" type="application/rss+xml" href="http://ispobock.github.io/docs/linux/index.xml" title="Here is Bock's Site" />
 <!--
 Made with Book Theme
@@ -276,6 +276,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#服务管理">服务管理</a></li>
         <li><a href="#查看进程">查看进程</a></li>
         <li><a href="#查看内存cpu使用">查看内存/CPU使用</a></li>
+        <li><a href="#查看gpu信息">查看GPU信息</a></li>
         <li><a href="#会话管理screen">会话管理screen</a></li>
         <li><a href="#系统分区">系统分区</a></li>
       </ul>
@@ -351,6 +352,18 @@ top
 <h3 id="查看内存cpu使用">查看内存/CPU使用</h3>
 <pre><code>htop
 </code></pre>
+<hr>
+<h3 id="查看gpu信息">查看GPU信息</h3>
+<pre><code>lspci | grep VGA
+</code></pre>
+<p>通过<code>lspci</code>命令可以查看所有总线上的设备，在结果中找到VGA（Video Graphic Array）兼容的设备。从结果中可以看到设备在总线上的地址。</p>
+<pre><code>lspci -v -s 00:82.0
+</code></pre>
+<p>通过以上命令可以查看该地址的设备详细信息，包括中断请求（IRQ）号等。</p>
+<pre><code>lshw -C display
+</code></pre>
+<p>也可以直接用<code>lshw</code>命令来查看<em>hardware</em>的信息，通过<code>-C</code>参数指定显示的硬件类型。</p>
+<hr>
 <h3 id="会话管理screen">会话管理screen</h3>
 <ul>
 <li><code>screen -S name</code> 创建会话</li>
@@ -438,6 +451,7 @@ top
         <li><a href="#服务管理">服务管理</a></li>
         <li><a href="#查看进程">查看进程</a></li>
         <li><a href="#查看内存cpu使用">查看内存/CPU使用</a></li>
+        <li><a href="#查看gpu信息">查看GPU信息</a></li>
         <li><a href="#会话管理screen">会话管理screen</a></li>
         <li><a href="#系统分区">系统分区</a></li>
       </ul>
