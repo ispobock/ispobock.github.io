@@ -18,7 +18,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.b3215d9d1d18d9051e7fbe8f256ff80e30f41d29073b86348e230d297b771002.css" integrity="sha256-syFdnR0Y2QUef76PJW/4DjD0HSkHO4Y0jiMNKXt3EAI=">
-<script defer src="/en.search.min.82eab5cb18667c3681ce363803a97e4fe4aee916614a1f25026d5051912ca1de.js" integrity="sha256-guq1yxhmfDaBzjY4A6l&#43;T&#43;Su6RZhSh8lAm1QUZEsod4="></script>
+<script defer src="/en.search.min.bd3bcd64b5a1e680949b114cd719f6e63cb10af3c5aa1771a392a3fb842c1f99.js" integrity="sha256-vTvNZLWh5oCUmxFM1xn25jyxCvPFqhdxo5Kj&#43;4QsH5k="></script>
 <link rel="alternate" type="application/rss+xml" href="http://ispobock.github.io/docs/linux/index.xml" title="Here is Bock's Site" />
 <!--
 Made with Book Theme
@@ -279,6 +279,8 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#查看gpu信息">查看GPU信息</a></li>
         <li><a href="#会话管理screen">会话管理screen</a></li>
         <li><a href="#系统分区">系统分区</a></li>
+        <li><a href="#软链接硬链接">软链接/硬链接</a></li>
+        <li><a href="#用户管理">用户管理</a></li>
       </ul>
     </li>
   </ul>
@@ -363,6 +365,9 @@ top
 <pre><code>lshw -C display
 </code></pre>
 <p>也可以直接用<code>lshw</code>命令来查看<em>hardware</em>的信息，通过<code>-C</code>参数指定显示的硬件类型。</p>
+<pre><code>fuser -v /dev/nvidia*
+</code></pre>
+<p>可以通过<code>fuser</code>查看哪些进程在占用GPU。</p>
 <hr>
 <h3 id="会话管理screen">会话管理screen</h3>
 <ul>
@@ -404,6 +409,50 @@ top
 <li><code>umount</code>  卸载分区
 <ul>
 <li><code>umount /dev/sda1</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="软链接硬链接">软链接/硬链接</h3>
+<p>Linux中的文件共享使用通过<em>软链接（符号链接）<em>和</em>硬链接</em>两种方式进行实现。硬链接相当于文件的一个别名，多个文件名对应于同一个索引节点。可以通过<code>link</code>或<code>ln</code>命令进行创建。</p>
+<pre><code>ln /home/test/srcfile hardlink
+</code></pre>
+<p>使用时需要注意两点：</p>
+<ul>
+<li>硬链接<strong>只能对文件进行创建</strong>，不能对目录进行创建，因为当前目录<code>.</code>和父目录<code>..</code>也是硬链接，会造成目录环。</li>
+<li>硬链接不能交叉文件系统创建，因为不同文件系统中会有索引节点号重复的现象。</li>
+</ul>
+<p>软连接相当于新建了个文件，数据块里存放的内容即源文件的路径名。不仅没有以上两点限制，还可以进行新的访问权限设置。可以通过以下命令创建。</p>
+<pre><code>ln –s  /home/test/src  softlink
+</code></pre>
+<p>创建链接后，可以通过<code>rm -rf</code>命令进行删除。</p>
+<hr>
+<h3 id="用户管理">用户管理</h3>
+<ul>
+<li>添加：<code>useradd user1</code>
+<ul>
+<li><code>-d</code>指定home目录，<code>-m</code>创建home目录</li>
+<li><code>-g</code>指定用户组</li>
+<li><code>-s</code>指定shell，一般<code>/bin/bash</code></li>
+<li><code>passwd user1</code>为其分配密码</li>
+</ul>
+</li>
+<li>删除：<code>userdel user1</code>
+<ul>
+<li><code>-r</code>删除home目录</li>
+</ul>
+</li>
+<li>用户组
+<ul>
+<li><code>groupadd group1</code></li>
+<li><code>groupdel group1</code></li>
+<li>修改用户的用户组：<code>usermod -g group1 user1</code></li>
+</ul>
+</li>
+<li>查看
+<ul>
+<li>用户信息：<code>cat /etc/passwd</code></li>
+<li>用户组信息：<code>cat /etc/group</code></li>
 </ul>
 </li>
 </ul>
@@ -454,6 +503,8 @@ top
         <li><a href="#查看gpu信息">查看GPU信息</a></li>
         <li><a href="#会话管理screen">会话管理screen</a></li>
         <li><a href="#系统分区">系统分区</a></li>
+        <li><a href="#软链接硬链接">软链接/硬链接</a></li>
+        <li><a href="#用户管理">用户管理</a></li>
       </ul>
     </li>
   </ul>
