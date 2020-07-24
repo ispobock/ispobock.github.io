@@ -344,28 +344,6 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-comments">
 
 
-<div id="gitalk-container"></div>
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-<script>
-  const gitalk = new Gitalk({
-    clientID: 'e390d2bf9fc717a4f6e8',
-    clientSecret: '4d1dd2c862782948f9e38053551ce9de5b22dada',
-    repo: 'ispobock.github.io',
-    owner: 'ispobock',
-    admin: ['ispobock'],
-    id: location.pathname, 
-    distractionFreeMode: false 
-  });
-  (function() {
-    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-      document.getElementById('gitalk-container').innerHTML = 'Gitalk comments not available by default when the website is previewed locally.';
-      return;
-    }
-    gitalk.render('gitalk-container');
-  })();
-</script>
-
 
   </div>
   
