@@ -12,7 +12,7 @@ class TreeNode{TreeNode[] next = new TreeNode[26];String word; // 末尾节点
 最佳实现 只有字符串末尾节点才挂上word，其余节点为null以作为区分一个节点是否为一个字符串的末尾。
 class TreeNode{TreeNode[] next = new TreeNode[26];String word; // 末尾节点挂上word}class Trie {TreeNode root;/** Initialize your data structure here. */public Trie() {root = new TreeNode();}/** Inserts a word into the trie. */public void insert(String word) {TreeNode p = root;for(char c : word.toCharArray()){int i = c - &#39;a&#39;;if(p.next[i] == null) p.next[i] = new TreeNode();p = p." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://ispobock.github.io/docs/algorithm/trie/" />
+<meta property="og:url" content="https://ispobock.github.io/docs/algorithm/trie/" />
 
 <title>Trie | Here is Bock&#39;s Site</title>
 <link rel="manifest" href="/manifest.json">

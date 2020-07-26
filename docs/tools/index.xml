@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tools on Here is Bock&#39;s Site</title>
-    <link>http://ispobock.github.io/docs/tools/</link>
+    <link>https://ispobock.github.io/docs/tools/</link>
     <description>Recent content in Tools on Here is Bock&#39;s Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://ispobock.github.io/docs/tools/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ispobock.github.io/docs/tools/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>http://ispobock.github.io/docs/tools/beamer/</link>
+      <link>https://ispobock.github.io/docs/tools/beamer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://ispobock.github.io/docs/tools/beamer/</guid>
+      <guid>https://ispobock.github.io/docs/tools/beamer/</guid>
       <description>Beamer Beamer是一个简单高效的LaTeX Slides模板，用其制作学术PPT会更加简洁美观。这里是一个Beamer模板，包括文档结构搭建、分栏、模块化文本、参考文献引用、算法编写、字体设置以及图片插入等功能的实现。
  环境配置：CTeX + vscode + LaTeX Workshop插件 参考文档：beameruserguide 初始文档结构：  整体框架 \documentclass{beamer}\usetheme{EastLansing} % Beamer主题样式v 3.0\usecolortheme{rose} % Beamer颜色主题样式\usefonttheme[onlylarge]{structuresmallcapsserif}\title[]{} % 缩写，全写\author[]{}\institute[]{}\begin{document}\begin{frame}\titlepage\end{frame}\section*{Outline}\begin{frame}\tableofcontents\end{frame}\section{Introduction}\subsection{Overview}\begin{frame}\frametitle{}%\framesubtitle{} Content\end{frame}\end{document}加外框的文本 % definition\begin{definition}definition...\end{definition}% example\begin{example}\begin{itemize}\item emample1\item emample2\end{itemize}\end{example}% block\begin{block}{Answered Questions}How many primes are there?\end{block}% proof\begin{proof}\end{proof}分栏 \begin{columns}\column{.</description>
     </item>
     
     <item>
       <title></title>
-      <link>http://ispobock.github.io/docs/tools/git/</link>
+      <link>https://ispobock.github.io/docs/tools/git/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://ispobock.github.io/docs/tools/git/</guid>
+      <guid>https://ispobock.github.io/docs/tools/git/</guid>
       <description>Git学习手册 总结了一些Git的常规操作，以便以后查看使用。
 本地仓库 首先得有个本地仓库，可由两种方法创建。
 $ git initgit init在当前目录创建一个仓库，并自动创建一个master分支。

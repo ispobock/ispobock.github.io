@@ -3,86 +3,86 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://ispobock.github.io/docs/algorithm/</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://ispobock.github.io/docs/algorithm/</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://ispobock.github.io/docs/development/</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://ispobock.github.io/docs/development/</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://ispobock.github.io/docs/linux/</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://ispobock.github.io/docs/linux/</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://ispobock.github.io/docs/tools/</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://ispobock.github.io/docs/tools/</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://ispobock.github.io/docs/algorithm/red_black_tree/</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://ispobock.github.io/docs/algorithm/red_black_tree/</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://ispobock.github.io/docs/algorithm/trie/</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://ispobock.github.io/docs/algorithm/trie/</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://ispobock.github.io/docs/development/restful/</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://ispobock.github.io/docs/development/restful/</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://ispobock.github.io/docs/tools/beamer/</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://ispobock.github.io/docs/tools/beamer/</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://ispobock.github.io/docs/tools/git/</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://ispobock.github.io/docs/tools/git/</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://ispobock.github.io/posts/</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://ispobock.github.io/posts/</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://ispobock.github.io/categories/</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://ispobock.github.io/categories/</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://ispobock.github.io/docs/</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://ispobock.github.io/docs/</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://ispobock.github.io/</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://ispobock.github.io/</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://ispobock.github.io/tags/</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://ispobock.github.io/tags/</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
