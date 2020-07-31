@@ -1,74 +1,61 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.google.com/schemas/sitemap/0.84">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>https://ispobock.github.io/docs/algorithm/</loc>
-    <changefreq>daily</changefreq>
   </url>
   
   <url>
     <loc>https://ispobock.github.io/docs/development/</loc>
-    <changefreq>daily</changefreq>
   </url>
   
   <url>
     <loc>https://ispobock.github.io/docs/linux/</loc>
-    <changefreq>daily</changefreq>
   </url>
   
   <url>
     <loc>https://ispobock.github.io/docs/tools/</loc>
-    <changefreq>daily</changefreq>
   </url>
   
   <url>
     <loc>https://ispobock.github.io/docs/algorithm/red_black_tree/</loc>
-    <changefreq>daily</changefreq>
   </url>
   
   <url>
     <loc>https://ispobock.github.io/docs/algorithm/trie/</loc>
-    <changefreq>daily</changefreq>
   </url>
   
   <url>
     <loc>https://ispobock.github.io/docs/development/restful/</loc>
-    <changefreq>daily</changefreq>
   </url>
   
   <url>
     <loc>https://ispobock.github.io/docs/tools/beamer/</loc>
-    <changefreq>daily</changefreq>
   </url>
   
   <url>
     <loc>https://ispobock.github.io/docs/tools/git/</loc>
-    <changefreq>daily</changefreq>
   </url>
   
   <url>
     <loc>https://ispobock.github.io/posts/</loc>
-    <changefreq>daily</changefreq>
   </url>
   
   <url>
     <loc>https://ispobock.github.io/categories/</loc>
-    <changefreq>daily</changefreq>
   </url>
   
   <url>
     <loc>https://ispobock.github.io/docs/</loc>
-    <changefreq>daily</changefreq>
   </url>
   
   <url>
     <loc>https://ispobock.github.io/</loc>
-    <changefreq>daily</changefreq>
   </url>
   
   <url>
     <loc>https://ispobock.github.io/tags/</loc>
-    <changefreq>daily</changefreq>
   </url>
   
 </urlset>
