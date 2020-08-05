@@ -17,7 +17,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.b3215d9d1d18d9051e7fbe8f256ff80e30f41d29073b86348e230d297b771002.css" integrity="sha256-syFdnR0Y2QUef76PJW/4DjD0HSkHO4Y0jiMNKXt3EAI=">
-<script defer src="/en.search.min.c2748e0a8d4046cb4c29eb9e12b662a6c296f0acfb95065436d71f5ed04d9c98.js" integrity="sha256-wnSOCo1ARstMKeueErZipsKW8Kz7lQZUNtcfXtBNnJg="></script>
+<script defer src="/en.search.min.28f25a78e5d00a4849e9076b3fa4a18e254a80105c759f9b3bdf91310e2836af.js" integrity="sha256-KPJaeOXQCkhJ6QdrP6ShjiVKgBBcdZ&#43;bO9&#43;RMQ4oNq8="></script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173469760-1"></script>
 <script>
@@ -520,6 +520,20 @@ top
 <li><code>-P</code>指定接受文件服务器端口号（即ssh端口）</li>
 <li>同样地还可以实现另一台机器传文件至本地、另外两台机器之间互传文件</li>
 </ul>
+<p><code>scp</code>命令只是简单地在源文件夹和目标文件夹之间进行拷贝。如果需要在网络中使得两个文件夹中内容保持同步，可以使用<code>rsync</code>命令，其<code>delta transfer algorithm</code>可以避免传送已经传送的文件。当需要传输的文件很大时，使用<code>rsync</code>的<code>-P</code>参数可以实现断点重传。一个简单的<code>rsync</code>命令：</p>
+<pre><code>rsync -av -e &quot;ssh -p 21&quot; --progress --rsync-path=&quot;sudo rsync&quot; /src user@host:/dest
+</code></pre>
+<ul>
+<li><code>-a</code>以递归方式传递文件</li>
+<li><code>-v</code>verbose</li>
+<li><code>-e</code>指定<code>ssh</code>方式进行同步</li>
+<li><code>--progress</code>显示备份过程</li>
+<li><code>--rsync-path</code>指定远程服务器上<code>rsync</code>命令的路径，加上<code>sudo</code>即可在远程机器上使用特定权限进行传输，不过这里的<code>sudo rsync</code>命令需要设置成免密码</li>
+</ul>
+<p>参考:<br>
+<a href="https://stackoverflow.com/questions/20244585/how-does-scp-differ-from-rsync">How does <code>scp</code> differ from <code>rsync</code>?</a><br>
+<a href="https://man.linuxde.net/rsync">rsync命令</a>
+<a href="https://www.shine-it.com/posts/rsync_changeown_root/">RSYNC 以及RSYNC-PATH</a></p>
 <hr>
 <h3 id="ssh密钥登录">ssh密钥登录</h3>
 <p>首先通过<code>ssh-keygen</code>生成<strong>公钥-私钥对</strong></p>
