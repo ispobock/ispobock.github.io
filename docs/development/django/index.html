@@ -300,9 +300,39 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#创建项目">创建项目</a></li>
+    <li><a href="#数据库配置">数据库配置</a></li>
+    <li><a href="#创建应用">创建应用</a></li>
+    <li><a href="#激活应用">激活应用</a></li>
+    <li><a href="#定义模型">定义模型</a></li>
+    <li><a href="#生成数据表">生成数据表</a></li>
+    <li><a href="#测试数据操作">测试数据操作</a></li>
+    <li><a href="#启动服务器">启动服务器</a></li>
+    <li><a href="#admin站点管理">admin站点管理</a>
       <ul>
-        <li><a href="#django项目搭建流程">Django项目搭建流程</a></li>
+        <li><a href="#配置admin应用">配置admin应用</a></li>
+        <li><a href="#创建管理员用户">创建管理员、用户</a></li>
+        <li><a href="#中文支持">中文支持</a></li>
+        <li><a href="#管理数据表">管理数据表:</a></li>
+        <li><a href="#自定义管理页面">自定义管理页面</a></li>
+        <li><a href="#关联对象">关联对象</a></li>
+        <li><a href="#布尔值显示问题">布尔值显示问题</a></li>
+        <li><a href="#执行动作位置问题">执行动作位置问题</a></li>
+        <li><a href="#使用装饰器完成注册">使用装饰器完成注册</a></li>
+      </ul>
+    </li>
+    <li><a href="#视图的基本使用">视图的基本使用</a>
+      <ul>
+        <li><a href="#定义视图">定义视图</a></li>
+        <li><a href="#配置url">配置URL</a></li>
+      </ul>
+    </li>
+    <li><a href="#模板的基本使用">模板的基本使用</a>
+      <ul>
+        <li><a href="#创建模板目录">创建模板目录</a></li>
+        <li><a href="#配置模板路径">配置模板路径</a></li>
+        <li><a href="#模板语法">模板语法</a></li>
+        <li><a href="#使用流程">使用流程</a></li>
       </ul>
     </li>
   </ul>
@@ -316,10 +346,10 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h3 id="django项目搭建流程">Django项目搭建流程</h3>
+  <article class="markdown"><h1 id="django项目搭建流程">Django项目搭建流程</h1>
 <p>Django是Python的一个基于MTV（Model-Template-View）模式的后端框架。其提供了搭建网站的一系列的解决方案，给我们开发提供了很多便捷，包括后台管理（admin）、登录验证(auth)、表单处理(Form)等等，因此其可能使用起来没有Flask那么轻巧。</p>
 <p>本文仅介绍传统Django项目的搭建流程，即<strong>后端渲染页面</strong>，生成一个html返回给前端。当然，现在出现了前后端分离的架构，后端只负责对数据进行处理，然后提供一个<code>REST API</code>，将处理好的数据用<code>json</code>的格式返回给前端，前端用<code>JavaScript</code>来渲染页面。前端渲染页面时不用对整个页面进行渲染，采用Diff算法，只将有更新的元素进行重新渲染，提升了性能。</p>
-<h4 id="创建项目">创建项目</h4>
+<h2 id="创建项目">创建项目</h2>
 <pre><code>django-admin startproject 项目名
 </code></pre>
 <ul>
@@ -329,7 +359,7 @@ https://github.com/alex-shpak/hugo-book
 <li><code>urls.py</code>：项目URL声明</li>
 <li><code>wsgi.py</code>：项目与WSGI兼容的Web服务器入口</li>
 </ul>
-<h4 id="数据库配置">数据库配置</h4>
+<h2 id="数据库配置">数据库配置</h2>
 <ol>
 <li>在<code>__init__.py</code>中写入</li>
 </ol>
@@ -347,7 +377,7 @@ pymysql<span style="color:#f92672">.</span>install_as_MySQLdb()
 </code></pre>
 </li>
 </ol>
-<h4 id="创建应用">创建应用</h4>
+<h2 id="创建应用">创建应用</h2>
 <pre><code>python manage.py startapp app名
 </code></pre>
 <ul>
@@ -355,9 +385,9 @@ pymysql<span style="color:#f92672">.</span>install_as_MySQLdb()
 <li>models.py：模型</li>
 <li>views.py：视图</li>
 </ul>
-<h4 id="激活应用">激活应用</h4>
+<h2 id="激活应用">激活应用</h2>
 <p>在<code>settings.py</code>中将自己的应用名加入到<code>INSTALLED_APPS</code>中</p>
-<h4 id="定义模型">定义模型</h4>
+<h2 id="定义模型">定义模型</h2>
 <ul>
 <li>一个数据表就对应一个模型(类)</li>
 <li>在<code>models.py</code>文件中定义模型</li>
@@ -369,7 +399,7 @@ pymysql<span style="color:#f92672">.</span>install_as_MySQLdb()
        ggirlnum <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>IntegerField()
 
 sgrade <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>ForeignKey(<span style="color:#e6db74">&#34;Grades&#34;</span>)
-</code></pre></div><h4 id="生成数据表">生成数据表</h4>
+</code></pre></div><h2 id="生成数据表">生成数据表</h2>
 <ol>
 <li>
 <p>生成迁移文件</p>
@@ -384,7 +414,7 @@ sgrade <span style="color:#f92672">=</span> models<span style="color:#f92672">.<
 <p>相当于执行SQL创建数据表</p>
 </li>
 </ol>
-<h4 id="测试数据操作">测试数据操作</h4>
+<h2 id="测试数据操作">测试数据操作</h2>
 <ol>
 <li>
 <p>进入<code>python shell</code></p>
@@ -446,29 +476,29 @@ sgrade <span style="color:#f92672">=</span> models<span style="color:#f92672">.<
 <p>不用save，直接插入数据库。</p>
 </li>
 </ol>
-<h4 id="启动服务器">启动服务器</h4>
+<h2 id="启动服务器">启动服务器</h2>
 <pre><code>python manage.py runserver ip:port
 </code></pre>
 <p>这里<code>ip</code>可以不写，代表本地测试ip (127.0.0.1)，端口号默认8000</p>
 <p><em>这是一个纯python的轻量级web服务器，仅仅在开发测试中使用</em></p>
-<h4 id="admin站点管理">admin站点管理</h4>
-<h5 id="配置admin应用">配置admin应用</h5>
+<h2 id="admin站点管理">admin站点管理</h2>
+<h3 id="配置admin应用">配置admin应用</h3>
 <p>在<code>settings.py</code>文件中的<code>INSTALLED_APPS</code>中添加<code>‘django.contrib.admin’</code></p>
-<h5 id="创建管理员用户">创建管理员、用户</h5>
+<h3 id="创建管理员用户">创建管理员、用户</h3>
 <pre><code>python manage.py createsuperuser
 </code></pre>
 <p>输入用户名、邮箱密码</p>
-<h5 id="中文支持">中文支持</h5>
+<h3 id="中文支持">中文支持</h3>
 <p>在<code>settings.py</code>里设置</p>
 <pre><code>LANGUAGE_CODE = ‘zh-Hans’
 TIME_ZONE = ‘Asia/Shanghai’
 </code></pre>
-<h5 id="管理数据表">管理数据表:</h5>
+<h3 id="管理数据表">管理数据表:</h3>
 <p>修改<code>admin.py</code>文件</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> .models <span style="color:#f92672">import</span> Grades, Students
 admin<span style="color:#f92672">.</span>site<span style="color:#f92672">.</span>register(Grades)
 admin<span style="color:#f92672">.</span>site<span style="color:#f92672">.</span>register(Students)
-</code></pre></div><h5 id="自定义管理页面">自定义管理页面</h5>
+</code></pre></div><h3 id="自定义管理页面">自定义管理页面</h3>
 <p>列表页属性（4个）、添加修改页属性（2个）</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GradesAdmin</span>(admin<span style="color:#f92672">.</span>ModelAdmin):
 	list_display <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;pk&#39;</span>, <span style="color:#e6db74">&#39;gname&#39;</span>, <span style="color:#f92672">...</span> ]
@@ -480,14 +510,14 @@ admin<span style="color:#f92672">.</span>site<span style="color:#f92672">.</span
 	fieldsets <span style="color:#f92672">=</span> [ (<span style="color:#e6db74">&#34;num&#34;</span>, {<span style="color:#e6db74">&#34;fields&#34;</span>: [<span style="color:#e6db74">&#39;ggirlnum&#39;</span>,<span style="color:#e6db74">&#39;gboynum&#39;</span>]}),
 		(<span style="color:#e6db74">&#34;base&#34;</span>, {<span style="color:#e6db74">&#34;fields&#34;</span>: [<span style="color:#e6db74">&#39;gname&#39;</span>, <span style="color:#e6db74">&#39;gdate&#39;</span>, <span style="color:#e6db74">&#39;isDelete&#39;</span>]}), ]
 admin<span style="color:#f92672">.</span>site<span style="color:#f92672">.</span>register(Grades, GradesAdmin)
-</code></pre></div><h5 id="关联对象">关联对象</h5>
+</code></pre></div><h3 id="关联对象">关联对象</h3>
 <p>例如，在添加一个班级时可以添加几个学生</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StudentInfo</span>(admin<span style="color:#f92672">.</span>TabularInline): <span style="color:#75715e">#StackedInline</span>
 	model <span style="color:#f92672">=</span> Student
 	extra <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GradesAdmin</span>(admin<span style="color:#f92672">.</span>ModelAdmin):
 	inlines <span style="color:#f92672">=</span> [StudentsInfo]
-</code></pre></div><h5 id="布尔值显示问题">布尔值显示问题</h5>
+</code></pre></div><h3 id="布尔值显示问题">布尔值显示问题</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StudentAdmin</span>(admin<span style="color:#f92672">.</span>ModelAdmin):
 	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">gender</span>(self):
 		<span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>sgender:
@@ -499,21 +529,21 @@ admin<span style="color:#f92672">.</span>site<span style="color:#f92672">.</span
 	list_display <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;pk&#39;</span>, <span style="color:#e6db74">&#39;sname&#39;</span>, <span style="color:#e6db74">&#39;sage&#39;</span>, gender, <span style="color:#e6db74">&#39;sgrade&#39;</span>]
 	list_per_page <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
 admin<span style="color:#f92672">.</span>site<span style="color:#f92672">.</span>register(Students, StudentsAdmin)
-</code></pre></div><h5 id="执行动作位置问题">执行动作位置问题</h5>
+</code></pre></div><h3 id="执行动作位置问题">执行动作位置问题</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">actions_on_top <span style="color:#f92672">=</span> False
 actions_on_bottom <span style="color:#f92672">=</span> True
-</code></pre></div><h5 id="使用装饰器完成注册">使用装饰器完成注册</h5>
+</code></pre></div><h3 id="使用装饰器完成注册">使用装饰器完成注册</h3>
 <p>把之前的<code>admin.site.register(Students, StudentsAdmin)</code>注释，在上面添加  <code>@admin.register(Students)</code></p>
-<h4 id="视图的基本使用">视图的基本使用</h4>
+<h2 id="视图的基本使用">视图的基本使用</h2>
 <ul>
 <li>在<code>django</code>中，视图对web请求进行回应</li>
 <li>视图就是python函数，在<code>views.py</code>文件中定义</li>
 </ul>
-<h5 id="定义视图">定义视图</h5>
+<h3 id="定义视图">定义视图</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> django.http <span style="color:#f92672">import</span> HttpResponse
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">index</span>(request):
 	<span style="color:#66d9ef">return</span> HttpResponse(<span style="color:#e6db74">&#34;Hello world!&#34;</span>)
-</code></pre></div><h5 id="配置url">配置URL</h5>
+</code></pre></div><h3 id="配置url">配置URL</h3>
 <ol>
 <li>修改<code>project</code>目录下的<code>urls.py</code>文件</li>
 </ol>
@@ -532,19 +562,19 @@ urlpatterns <span style="color:#f92672">=</span> [
 urlpatterns <span style="color:#f92672">=</span> [
 	url(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;^$&#39;</span>, views<span style="color:#f92672">.</span>index)
 ]
-</code></pre></div><h4 id="模板的基本使用">模板的基本使用</h4>
+</code></pre></div><h2 id="模板的基本使用">模板的基本使用</h2>
 <p>模板是HTML页面，可根据视图中传递过来的数据进行填充。</p>
-<h5 id="创建模板目录">创建模板目录</h5>
+<h3 id="创建模板目录">创建模板目录</h3>
 <p>创建<code>templates</code>目录，在目录下创建对应项目的模板目（e.g., project/templates/myApp）</p>
-<h5 id="配置模板路径">配置模板路径</h5>
+<h3 id="配置模板路径">配置模板路径</h3>
 <p>修改<code>settings.py</code>文件下的<code>TEMPLATES</code></p>
 <pre><code>'DIRS' : [os.path.join(BASE_DIR, 'templates')]
 </code></pre>
-<h5 id="模板语法">模板语法</h5>
+<h3 id="模板语法">模板语法</h3>
 <pre><code>{{输出值，可以是变量，也可以是对象属性}}
 {%执行代码段%}
 </code></pre>
-<h5 id="使用流程">使用流程</h5>
+<h3 id="使用流程">使用流程</h3>
 <p>写html模板-&gt;定义视图-&gt;配置url</p>
 </article>
  
@@ -582,9 +612,39 @@ urlpatterns <span style="color:#f92672">=</span> [
       
   <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#创建项目">创建项目</a></li>
+    <li><a href="#数据库配置">数据库配置</a></li>
+    <li><a href="#创建应用">创建应用</a></li>
+    <li><a href="#激活应用">激活应用</a></li>
+    <li><a href="#定义模型">定义模型</a></li>
+    <li><a href="#生成数据表">生成数据表</a></li>
+    <li><a href="#测试数据操作">测试数据操作</a></li>
+    <li><a href="#启动服务器">启动服务器</a></li>
+    <li><a href="#admin站点管理">admin站点管理</a>
       <ul>
-        <li><a href="#django项目搭建流程">Django项目搭建流程</a></li>
+        <li><a href="#配置admin应用">配置admin应用</a></li>
+        <li><a href="#创建管理员用户">创建管理员、用户</a></li>
+        <li><a href="#中文支持">中文支持</a></li>
+        <li><a href="#管理数据表">管理数据表:</a></li>
+        <li><a href="#自定义管理页面">自定义管理页面</a></li>
+        <li><a href="#关联对象">关联对象</a></li>
+        <li><a href="#布尔值显示问题">布尔值显示问题</a></li>
+        <li><a href="#执行动作位置问题">执行动作位置问题</a></li>
+        <li><a href="#使用装饰器完成注册">使用装饰器完成注册</a></li>
+      </ul>
+    </li>
+    <li><a href="#视图的基本使用">视图的基本使用</a>
+      <ul>
+        <li><a href="#定义视图">定义视图</a></li>
+        <li><a href="#配置url">配置URL</a></li>
+      </ul>
+    </li>
+    <li><a href="#模板的基本使用">模板的基本使用</a>
+      <ul>
+        <li><a href="#创建模板目录">创建模板目录</a></li>
+        <li><a href="#配置模板路径">配置模板路径</a></li>
+        <li><a href="#模板语法">模板语法</a></li>
+        <li><a href="#使用流程">使用流程</a></li>
       </ul>
     </li>
   </ul>
