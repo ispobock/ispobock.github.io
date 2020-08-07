@@ -27,6 +27,10 @@
   </url>
   
   <url>
+    <loc>https://ispobock.github.io/docs/development/django/</loc>
+  </url>
+  
+  <url>
     <loc>https://ispobock.github.io/docs/development/restful/</loc>
   </url>
   
