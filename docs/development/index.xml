@@ -18,8 +18,9 @@
       <guid>https://ispobock.github.io/docs/development/django/</guid>
       <description>Django项目搭建流程 Django是Python的一个基于MTV（Model-Template-View）模式的后端框架。其提供了搭建网站的一系列的解决方案，给我们开发提供了很多便捷，包括后台管理（admin）、登录验证(auth)、表单处理(Form)等等，因此其可能使用起来没有Flask那么轻巧。
 本文仅介绍传统Django项目的搭建流程，即后端渲染页面，生成一个html返回给前端。当然，现在出现了前后端分离的架构，后端只负责对数据进行处理，然后提供一个REST API，将处理好的数据用json的格式返回给前端，前端用JavaScript来渲染页面。前端渲染页面时不用对整个页面进行渲染，采用Diff算法，只将有更新的元素进行重新渲染，提升了性能。
-创建项目 django-admin startproject 项目名  manage.py: 与创建好的项目进行命令交互的工具 __init__.py：空文件，告诉Python该目录可被看作一个包 settings.py：项目配置文件 urls.py：项目URL声明 wsgi.py：项目与WSGI兼容的Web服务器入口  数据库配置  在__init__.py中写入  import pymysqlpymysql.install_as_MySQLdb()在settings.py里面的DATABASES里面配置    ENGINE里的sqlite改为mysql   NAME：“数据库名”   USER：“用户名”   PASSWORD：密码   HOST：服务器ip   PORT：端口   创建应用 python manage.py startapp app名  admin.py：站点配置 models.py：模型 views.py：视图  激活应用 在settings.py中将自己的应用名加入到INSTALLED_APPS中
-定义模型  一个数据表就对应一个模型(类) 在models.py文件中定义模型 模型类要继承models.Model类  class Grades(models.</description>
+创建项目 django-admin startproject 项目名  manage.py: 与创建好的项目进行命令交互的工具 __init__.py：空文件，告诉Python该目录可被看作一个包 settings.py：项目配置文件 urls.py：项目URL声明 wsgi.py：项目与WSGI兼容的Web服务器入口  数据库配置  在__init__.py中写入  import pymysqlpymysql.install_as_MySQLdb() 在settings.py里面的DATABASES里面配置
+ ENGINE里的sqlite改为mysqlNAME：“数据库名”USER：“用户名”PASSWORD：密码HOST：服务器ipPORT：端口   创建应用 python manage.py startapp app名  admin.py：站点配置 models.py：模型 views.py：视图  激活应用 在settings.py中将自己的应用名加入到INSTALLED_APPS中
+定义模型  一个数据表就对应一个模型(类) 在models.py文件中定义模型 模型类要继承models.Model类  class Grades(models.Model):gname = models.CharField(max_length=20)gdate = models.DateTimeField()ggirlnum = models.IntegerField()sgrade = models.ForeignKey(&amp;#34;Grades&amp;#34;)生成数据表   生成迁移文件</description>
     </item>
     
     <item>
