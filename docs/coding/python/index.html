@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Python Notes map对象 在Python2中, map返回的是一个list，在Python3中，map返回的是一个map对象，而map对象只能迭代一轮，每次迭代都会返回一个新的迭代器，迭代完所有元素后就变成空的对象了。所以如果需要对其进行多轮迭代，那需要将map对象转换为list。
+data = list(map(str.strip, open(file_path).readlines()))videoset = [x.split()[0] for x in data]filenames = [x.split()[1] for x in data]conda虚拟环境管理 conda env list 查看当前存在的环境conda list 查看当前环境装的包conda create -n env_name python=2.7 创建环境conda remove -n env_name --all 删除环境conda activate env_name 激活环境conda deactivate 退出环境 jupyter notebook kernel安装 conda activate env_name 先激活该环境python -m ipykernel install --user --name kernel_name 安装kernel memmap处理大数组 很多时候我们会遇到要处理的数组过大，而内存不足的问题，这时候就需numpy.memmap。
+# 创建test.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Python Notes map对象 在Python2中, map返回的是一个list，在Python3中，map返回的是一个map对象，而map对象只能迭代一轮，每次迭代都会返回一个新的迭代器，迭代完所有元素后就变成空的对象了。所以如果需要对其进行多轮迭代，那需要将map对象转换为list。
+data = list(map(str.strip, open(file_path).readlines()))videoset = [x.split()[0] for x in data]filenames = [x.split()[1] for x in data]conda虚拟环境管理 conda env list 查看当前存在的环境conda list 查看当前环境装的包conda create -n env_name python=2.7 创建环境conda remove -n env_name --all 删除环境conda activate env_name 激活环境conda deactivate 退出环境 jupyter notebook kernel安装 conda activate env_name 先激活该环境python -m ipykernel install --user --name kernel_name 安装kernel memmap处理大数组 很多时候我们会遇到要处理的数组过大，而内存不足的问题，这时候就需numpy.memmap。
+# 创建test." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ispobock.github.io/docs/coding/python/" />
+
+<title>Python | Here is Bock&#39;s Site</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.b3215d9d1d18d9051e7fbe8f256ff80e30f41d29073b86348e230d297b771002.css" integrity="sha256-syFdnR0Y2QUef76PJW/4DjD0HSkHO4Y0jiMNKXt3EAI=">
+<script defer src="/en.search.min.3ccf0ffc3f6b7ee726677016e98c6b808a0ac74cd928de34ab68f1fdac4f3ca9.js" integrity="sha256-PM8P/D9rfucmZ3AW6YxrgIoKx0zZKN40q2jx/axPPKk="></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-173469760-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-173469760-1');
+</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-173469760-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-173469760-1');
+</script>
+
+  <meta name="google-site-verification" content="YxFBq0EqkV1Bbw9K7Q79ybR_H9diMtT5ExTcGP8gkAk" />
+  <meta name="baidu-site-verification" content="XJChifQATr" />
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>Here is Bock&#39;s Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Algorithm</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/algorithm/red_black_tree/" class="">Red Black Tree</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/algorithm/trie/" class="">Trie</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Coding</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/coding/java/" class="">Java</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/coding/python/" class="active">Python</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Development</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/development/django/" class="">Django</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/development/restful/" class="">Restful</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <a href="/docs/linux/" class="">Linux</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Tools</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/tools/beamer/" class="">Beamer</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/tools/git/" class="">Git</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Python</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#python-notes">Python Notes</a>
+      <ul>
+        <li><a href="#map对象">map对象</a></li>
+        <li><a href="#conda虚拟环境管理">conda虚拟环境管理</a></li>
+        <li><a href="#jupyter-notebook-kernel安装">jupyter notebook kernel安装</a></li>
+        <li><a href="#memmap处理大数组">memmap处理大数组</a></li>
+        <li><a href="#虚拟环境">虚拟环境</a></li>
+        <li><a href="#make-a-plot">make a plot</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h2 id="python-notes">Python Notes</h2>
+<h3 id="map对象">map对象</h3>
+<p>在Python2中, map返回的是一个<code>list</code>，在Python3中，map返回的是一个<code>map对象</code>，而map对象只能迭代一轮，每次迭代都会返回一个新的迭代器，迭代完所有元素后就变成空的对象了。所以如果需要对其进行多轮迭代，那需要将<code>map对象</code>转换为<code>list</code>。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data <span style="color:#f92672">=</span> list(map(str<span style="color:#f92672">.</span>strip, open(file_path)<span style="color:#f92672">.</span>readlines()))
+videoset <span style="color:#f92672">=</span> [x<span style="color:#f92672">.</span>split()[<span style="color:#ae81ff">0</span>] <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> data]
+filenames <span style="color:#f92672">=</span> [x<span style="color:#f92672">.</span>split()[<span style="color:#ae81ff">1</span>] <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> data]
+</code></pre></div><h3 id="conda虚拟环境管理">conda虚拟环境管理</h3>
+<pre><code>conda env list   查看当前存在的环境
+conda list   查看当前环境装的包
+conda create -n env_name python=2.7   创建环境
+conda remove -n env_name --all   删除环境
+conda activate env_name  激活环境
+conda deactivate   退出环境
+</code></pre>
+<h3 id="jupyter-notebook-kernel安装">jupyter notebook kernel安装</h3>
+<pre><code>conda activate env_name 先激活该环境
+python -m ipykernel install --user --name kernel_name  安装kernel
+</code></pre>
+<h3 id="memmap处理大数组">memmap处理大数组</h3>
+<p>很多时候我们会遇到要处理的数组过大，而内存不足的问题，这时候就需<code>numpy.memmap</code>。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 创建test.dat文件</span>
+f <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>memmap(<span style="color:#e6db74">&#39;test.dat&#39;</span>, dtype<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>float32, mode<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;w+&#39;</span>, shape<span style="color:#f92672">=</span>(nrows, ncols))
+
+<span style="color:#75715e"># 对f进行修改</span>
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(nrows):
+    f[i, :] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>rand(ncols)
+
+<span style="color:#66d9ef">del</span> f
+<span style="color:#75715e"># del之后内存中的数组就同步到了磁盘上，这样内存映射的file就已经创建好了</span>
+
+<span style="color:#75715e"># 读取保存好的数据</span>
+f <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>memmap(<span style="color:#e6db74">&#39;test.dat&#39;</span>, dtype<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>float32, mode<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;r&#39;</span>, shape<span style="color:#f92672">=</span>(nrows, ncols))
+</code></pre></div><h3 id="虚拟环境">虚拟环境</h3>
+<pre><code>python -m venv tutorial-env  
+source tutorial-env/bin/activate
+pip freeze &gt; requirements.txt 
+pip install -r requirements.txt
+</code></pre>
+<h3 id="make-a-plot">make a plot</h3>
+<p>A good way to make a plot is to look at the <a href="https://matplotlib.org/gallery/index.html">Matplotlib gallery</a>, find a plot that looks somewhat like what you want, and adapt the code they give.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+
+
+  </div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#python-notes">Python Notes</a>
+      <ul>
+        <li><a href="#map对象">map对象</a></li>
+        <li><a href="#conda虚拟环境管理">conda虚拟环境管理</a></li>
+        <li><a href="#jupyter-notebook-kernel安装">jupyter notebook kernel安装</a></li>
+        <li><a href="#memmap处理大数组">memmap处理大数组</a></li>
+        <li><a href="#虚拟环境">虚拟环境</a></li>
+        <li><a href="#make-a-plot">make a plot</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
